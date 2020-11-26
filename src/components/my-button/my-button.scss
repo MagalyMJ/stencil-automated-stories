@@ -1,0 +1,88 @@
+:host {
+  display: block;
+}
+
+.MyButton {
+  width: 100%;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /** Colors **/
+  &.primary {
+    background: #1b8df2 0% 0% no-repeat padding-box;
+    border: none;
+    color: white;
+    transition: 0.3s;
+    &:hover,
+    &:focus {
+      background-color: #45a3f5;
+      box-shadow: 3px 4px 6px #a3a3a3;
+    }
+    &:active {
+      background-color: #0b7de0;
+      box-shadow: 3px 4px 6px #a3a3a3;
+    }
+    &:disabled {
+      background-color: #d6d6d6;
+      color: #a3a3a3;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+  &.secondary {
+    background: transparent;
+    border: 1px solid #1b8df2;
+    border-radius: 4px;
+    color: #1b8df2;
+    transition: 0.3s;
+    &:hover,
+    &:focus {
+      background-color: #7fbef5;
+      color: #45a3f5;
+    }
+
+    &:active {
+      background-color: #45a3f5;
+      color: #45a3f5;
+    }
+    &:disabled {
+      border-color: #d6d6d6;
+      color: #a3a3a3;
+      background-color: #f7f7f7;
+      cursor: not-allowed;
+    }
+  }
+
+  /** Shape **/
+  &.full {
+    border-radius: none;
+  }
+  &.round {
+    border-radius: 5rem;
+    overflow: hidden;
+    min-width: 56px;
+  }
+  &.smooth {
+    border-radius: 4px;
+  }
+
+  /** Size **/
+  &.large {
+    padding: 12px;
+  }
+  &.medium {
+    padding: 8px;
+  }
+  &.small {
+    padding: 4px;
+  }
+
+  /** Elevation **/
+  &.elevation {
+    box-shadow: 3px 4px 6px rgba(0, 0, 0, $alpha: 0.3);
+  }
+}
