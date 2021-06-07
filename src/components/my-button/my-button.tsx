@@ -1,6 +1,6 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 import clsx from 'clsx';
-import { Color, Shape, Size } from '../globals';
+import { Color, Shape } from '../globals';
 
 @Component({
   tag: 'my-button',
