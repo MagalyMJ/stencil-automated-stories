@@ -12,7 +12,7 @@ export class MyButton {
   @Prop({ reflect: true }) disabled?: boolean = false;
   @Prop({ reflect: true }) elevation?: boolean = false;
   @Prop() shape?: Shape = 'smooth';
-  @Prop() size?: Size = 'medium';
+  @Prop() size?: 'large' | 'medium' | 'small' = 'medium';
 
   render() {
     return (
