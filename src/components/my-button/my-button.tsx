@@ -1,5 +1,6 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 import clsx from 'clsx';
+import { Color, Shape } from '../globals';
 
 @Component({
   tag: 'my-button',
@@ -7,10 +8,10 @@ import clsx from 'clsx';
   shadow: true,
 })
 export class MyButton {
-  @Prop() color?: 'primary' | 'secondary' = 'primary';
+  @Prop() color?: Color = 'primary';
   @Prop({ reflect: true }) disabled?: boolean = false;
   @Prop({ reflect: true }) elevation?: boolean = false;
-  @Prop() shape?: 'full' | 'round' | 'smooth' = 'smooth';
+  @Prop() shape?: Shape = 'smooth';
   @Prop() size?: 'large' | 'medium' | 'small' = 'medium';
 
   render() {

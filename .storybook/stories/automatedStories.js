@@ -28,8 +28,15 @@ function getControlForProp(prop, controlOptions) {
     control = { control: { type: prop.type.toLowerCase() } };
   } else if (/^(?:string)$/i.test(prop.type)) {
     if (!/^(?:string|number|boolean|object)$/i.test(prop.complexType.original)) {
-      const arrOptions = prop.complexType.original.split(' | ');
-      const selectOptions = arrOptions.map(o => (o.match(/('(\w|-)+')/g) ? o.replace(/'|\|/gi, '').trim() : o));
+      const arrOptions = prop.complexType.resolved.split(' | ');
+      const selectOptions = arrOptions.map(o => (
+        o.match(/("(\w|-)+")|('(\w|-)+')/g) ? o
+          .replace(/'|\|/gi, '')
+          .replace(/"|\|/gi, '')
+          .replace(/'/gi, '')
+          .replace(/`/gi, '')
+          .trim() : o
+      ));
 
       control = {
         control: {
